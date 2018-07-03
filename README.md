@@ -3,7 +3,7 @@ AspNetCoreRateLimitRegex
 
 The original author of this project is Stefan Prodan (https://github.com/stefanprodan) at the project AspNetCoreRateLimit (https://github.com/stefanprodan/AspNetCoreRateLimit) and all the credit for the original code and concept goes to him.
 
-This version of the above project features Regular Expressions Based Endpoint Configuration as well as a URL Based Rate Limiting module that can be used to throttle requests based on the Url instead of the Caller or the Requests.
+This version of the project features Regular Expressions Based Rule Configuration as well as a URL Based Rate Limiting Middleware that can be used to throttle requests based on the Url instead of the Caller or the Requests.
 
 AspNetCoreRateLimitRegex is an ASP.NET Core rate limiting solution designed to control the rate of requests that clients can make to a Web API or MVC app based on the callers IP address or the requests client ID or the URL being called.
 The [AspNetCoreRateLimitRegex package](https://www.nuget.org/packages/AspNetCoreRateLimitRegex/) contains an IpRateLimitMiddleware, a ClientRateLimitMiddleware and a UrlRateLimitMiddleware.
