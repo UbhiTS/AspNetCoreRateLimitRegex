@@ -55,8 +55,8 @@ namespace AspNetCoreRateLimitRegex.Demo
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            //app.UseIpRateLimiting();
-            //app.UseClientRateLimiting();
+            app.UseIpRateLimiting();
+            app.UseClientRateLimiting();
             app.UseUrlRateLimiting();
 
             app.UseMvc();

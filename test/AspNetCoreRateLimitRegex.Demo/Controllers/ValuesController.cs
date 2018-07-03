@@ -23,11 +23,11 @@ namespace AspNetCoreRateLimitRegex.Demo.Controllers
             return "value";
         }
 
-        // GET api/values/TSA
-        [HttpGet("{orgCode}/Users/SyncByCommonNames")]
-        public string Get(string orgCode)
+        // GET api/values/microsoft/Users/List
+        [HttpGet("{organization}/Users/List")]
+        public string Get(string organization)
         {
-            return "You requested OrgCode : " + orgCode;
+            return "You requested Organization for User Sync : " + organization;
         }
 
         // POST api/values
