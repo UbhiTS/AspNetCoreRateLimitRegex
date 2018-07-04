@@ -10,11 +10,11 @@ The [AspNetCoreRateLimitRegex package](https://www.nuget.org/packages/AspNetCore
 With each middleware you can set multiple limits for different scenarios like allowing an IP or Client to make a maximum number of calls in a time interval like per second, 15 minutes, etc or allowing a Url to be called a set number of times regardless of the caller with UrlRateLimitMiddleware.
 You can define these limits to address all requests made to an API or you can scope the limits to each API URL or HTTP verb and path.
 
-The roginal documentation still holds true for most of the features except Endpoints (Urls) as Regular Expressions
+The original documentation still holds true for most of the features except Endpoints (Urls) as Regular Expressions
 
 For example:
 
-Instead of "Endpoint":"*" you now say "UrlRegex":".*:.*" where the format of url regex is "httpverb:urlpath" ... so the 1st ".*" matches anything (get,post,put,delete,patch) and the 2nd ".*" will match any url path
+Instead of '''"Endpoint":"*"''' you now say "UrlRegex":".*:.*" where the format of url regex is "httpverb:urlpath" ... so the 1st ".*" matches anything (get,post,put,delete,patch) and the 2nd ".*" will match any url path
 
 In the UrlRateLimiting configuration in appsettings.json you also have an optional parameter in the rule called "ProtectUrlUnmatched" which is false by default.
 
