@@ -14,7 +14,7 @@ The original documentation still holds true for most of the features except Endp
 
 For example:
 
-Instead of '"Endpoint":"*"' you now say '"UrlRegex":".*:.*"' where the format of url regex is '"httpverb:urlpath"' ... so the 1st '".*"' matches anything (get,post,put,delete,patch) and the 2nd '".*"' will match any url path
+Instead of `"Endpoint":"*"` you now say `"UrlRegex":".*:.*"` where the format of url regex is `"httpverb:urlpath"` ... so the 1st `".*"` matches anything (get,post,put,delete,patch) and the 2nd `".*"` will match any url path
 
 In the UrlRateLimiting configuration in appsettings.json you also have an optional parameter in the rule called "ProtectUrlUnmatched" which is false by default.
 
@@ -36,8 +36,9 @@ In the UrlRateLimiting configuration in appsettings.json you also have an option
 }
 ```
 
-If the "ProtectUrlUnmatched" is true for a rule then all the matched paths will count under one Limit. E.g.
-"get:/api/values/.*/Users/list" matches all the below and will be able to call the url only 5 times in 5 minutes regardless of the caller.
+If the `ProtectUrlUnmatched` is true for a rule then all the matched paths will count under one Limit. E.g.
+`get:/api/values/.*/Users/list` matches all the below and will be able to call the url only 5 times in 5 minutes regardless of the caller.
+```
 	1. get:/api/values/microsoft/Users/list
 	2. get:/api/values/google/Users/list
 	3. get:/api/values/apple/Users/list
@@ -46,9 +47,11 @@ If the "ProtectUrlUnmatched" is true for a rule then all the matched paths will 
 	6. API Quota Exceeded Message ...
 	7. API Quota Exceeded Message ...
 	8. API Quota Exceeded Message ...
+```
 
-If the "ProtectUrlUnmatched" is false then all the matched paths will count under their own seperate limits. E.g.
-"get:/api/values/.*/Users/list" matches all the below and each path can be called 5 times in 5 minutes regardless of the caller.
+If the `ProtectUrlUnmatched` is false then all the matched paths will count under their own seperate limits. E.g.
+`get:/api/values/.*/Users/list` matches all the below and each path can be called 5 times in 5 minutes regardless of the caller.
+```
 	1. get:/api/values/microsoft/Users/list
 	2. get:/api/values/microsoft/Users/list
 	3. get:/api/values/microsoft/Users/list
@@ -75,3 +78,4 @@ If the "ProtectUrlUnmatched" is false then all the matched paths will count unde
 	6. API Quota Exceeded Message ...
 	7. API Quota Exceeded Message ...
 	8. API Quota Exceeded Message ...	
+```
