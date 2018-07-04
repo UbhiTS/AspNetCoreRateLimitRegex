@@ -14,9 +14,10 @@ The original documentation still holds true for most of the features except Endp
 
 For example:
 
-Instead of `"Endpoint":"*"` you now say `"UrlRegex":".*:.*"` where the format of url regex is `"httpverb:urlpath"` ... so the 1st `".*"` matches anything (get,post,put,delete,patch) and the 2nd `".*"` will match any url path
+Instead of `"Endpoint":"*"` you now say `"UrlRegex":".*:.*"` where the format of url regex is `"httpverb:urlpath"` ... so the 1st `".*"` matches any http verb (get,post,put,delete,patch) and the 2nd `".*"` will match any url path.
+If for example you want to match all gets to the API, you would set the `"UrlRegex":"get:.*"` and for all updates `"UrlRegex":"put:.*"`
 
-In the UrlRateLimiting configuration in appsettings.json you also have an optional parameter in the rule called "ProtectUrlUnmatched" which is false by default.
+In the `UrlRateLimiting` configuration in `appsettings.json` you also have an optional parameter in the rule called `"ProtectUrlUnmatched"` which is `false` by default.
 
 ```json
 "UrlRateLimiting": {
@@ -28,7 +29,7 @@ In the UrlRateLimiting configuration in appsettings.json you also have an option
 		},
 		{
 			"UrlRegex": "get:/api/values/.*/Users/list",
-			"ProtectUrlUnmatched": true,
+			**"ProtectUrlUnmatched": true,**
 			"Period": "5m",
 			"Limit": 5
 		}
