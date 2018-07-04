@@ -14,7 +14,11 @@ The original documentation still holds true for most of the features except Endp
 
 For example:
 
-Instead of '''"Endpoint":"*"''' you now say "UrlRegex":".*:.*" where the format of url regex is "httpverb:urlpath" ... so the 1st ".*" matches anything (get,post,put,delete,patch) and the 2nd ".*" will match any url path
+Instead of 
+> "Endpoint":"*"
+you now say 
+> "UrlRegex":".*:.*"
+where the format of url regex is "httpverb:urlpath" ... so the 1st ".*" matches anything (get,post,put,delete,patch) and the 2nd ".*" will match any url path
 
 In the UrlRateLimiting configuration in appsettings.json you also have an optional parameter in the rule called "ProtectUrlUnmatched" which is false by default.
 
