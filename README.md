@@ -38,7 +38,7 @@ In the `UrlRateLimiting` configuration in `appsettings.json` you also have an op
 ```
 
 If the `ProtectUrlUnmatched` is true for a rule then all the matched paths will count under one Limit. E.g.
-`get:/api/values/.*/Users/list` matches all the below and will be able to call the url only 5 times in 5 minutes regardless of the caller.
+`get:/api/values/.*/Users/list` matches all the below calls and you will be able to call the API endpoint only 5 times in 5 minutes regardless of the caller.
 ```
 1. get:/api/values/microsoft/Users/list
 2. get:/api/values/google/Users/list
@@ -50,8 +50,8 @@ If the `ProtectUrlUnmatched` is true for a rule then all the matched paths will 
 8. API Quota Exceeded Message ...
 ```
 
-If the `ProtectUrlUnmatched` is false then all the matched paths will count under their own seperate limits. E.g.
-`get:/api/values/.*/Users/list` matches all the below and each path can be called 5 times in 5 minutes regardless of the caller.
+If the `ProtectUrlUnmatched` is false then all the matched paths will count under their own separate limits. E.g.
+`get:/api/values/.*/Users/list` matches all the below API calls and each url path can be called 5 times in 5 minutes regardless of the caller.
 ```
 1. get:/api/values/microsoft/Users/list
 2. get:/api/values/microsoft/Users/list
