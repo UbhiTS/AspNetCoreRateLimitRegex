@@ -18,6 +18,7 @@ Instead of "Endpoint":"*" you now say "UrlRegex":".*:.*" where the format of url
 
 In the UrlRateLimiting configuration in appsettings.json you also have an optional parameter in the rule called "ProtectUrlUnmatched" which is false by default.
 
+```json
 "UrlRateLimiting": {
 	"GeneralRules": [
 		{
@@ -33,6 +34,7 @@ In the UrlRateLimiting configuration in appsettings.json you also have an option
 		}
 	]
 }
+```
 
 If the "ProtectUrlUnmatched" is true for a rule then all the matched paths will count under one Limit. E.g.
 "get:/api/values/.*/Users/list" matches all the below and will be able to call the url only 5 times in 5 minutes regardless of the caller.
