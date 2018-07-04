@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Description>ASP.NET Core rate limiting middleware</Description>
+    <Description>ASP.NET Core rate limiting middleware based on Regular Expressions for Urls</Description>
     <VersionPrefix>1.0.6</VersionPrefix>
     <Authors>Tarunpreet Ubhi</Authors>
     <TargetFrameworks>netstandard1.6;net46</TargetFrameworks>
     <AssemblyName>AspNetCoreRateLimitRegex</AssemblyName>
     <PackageId>AspNetCoreRateLimitRegex</PackageId>
-    <PackageTags>aspnetcore;rate-limit;throttle;throttling;api;rate;limit;webapi;regex;regular;expression;expressions</PackageTags>
+    <PackageTags>aspnetcore;aspnetcoreratelimit;rate-limit;throttle;throttling;api;rate;limit;webapi;regex;regular;expression;expressions</PackageTags>
     <PackageProjectUrl>https://github.com/UbhiTS/AspNetCoreRateLimitRegex</PackageProjectUrl>
     <PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
@@ -17,7 +17,7 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>AspNetCoreRateLimitRegex</RootNamespace>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>

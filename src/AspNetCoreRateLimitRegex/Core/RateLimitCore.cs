@@ -36,10 +36,16 @@ namespace AspNetCoreRateLimitRegex
             switch (_rateLimitingProcessor)
             {
                 case Processor.ClientRateLimit:
-                    key = $"{_options.RateLimitCounterPrefix}_{requestIdentity.ClientId}_{rule.Period}_{requestIdentity.HttpVerb}_{requestIdentity.Path}";
+                    if (rule.ProtectUrlUnmatched == true)
+                        key = $"{_options.RateLimitCounterPrefix}_{requestIdentity.ClientId}_{rule.Period}_{rule.UrlRegex}";
+                    else
+                        key = $"{_options.RateLimitCounterPrefix}_{requestIdentity.ClientId}_{rule.Period}_{requestIdentity.HttpVerb}_{requestIdentity.Path}";
                     break;
                 case Processor.IpRateLimit:
-                    key = $"{_options.RateLimitCounterPrefix}_{requestIdentity.ClientIp}_{rule.Period}_{requestIdentity.HttpVerb}_{requestIdentity.Path}";
+                    if (rule.ProtectUrlUnmatched == true)
+                        key = $"{_options.RateLimitCounterPrefix}_{requestIdentity.ClientIp}_{rule.Period}_{rule.UrlRegex}";
+                    else
+                        key = $"{_options.RateLimitCounterPrefix}_{requestIdentity.ClientIp}_{rule.Period}_{requestIdentity.HttpVerb}_{requestIdentity.Path}";
                     break;
                 case Processor.UrlRateLimit:
                     if (rule.ProtectUrlUnmatched == true)

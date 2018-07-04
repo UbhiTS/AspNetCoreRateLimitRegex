@@ -17,7 +17,7 @@ For example:
 Instead of `"Endpoint":"*"` you now say `"UrlRegex":".*:.*"` where the format of url regex is `"httpverb:urlpath"` ... so the 1st `".*"` in `UrlRegex` matches any Http Verb (get,post,put,delete,patch) and the 2nd `".*"` will match any url path.
 If for example you want to rate limit all gets to the API, you would set the rule's `"UrlRegex":"get:.*"` and for throttling all updates `"UrlRegex":"put:.*"`
 
-In the `UrlRateLimiting` configuration in `appsettings.json` you also have an optional parameter in the rule called **`"ProtectUrlUnmatched"`** which is `false` by default.
+In any configuration such as the 'ClientRateLimiting', 'IpRateLimiting' or the `UrlRateLimiting` in `appsettings.json`, you have an optional parameter in the rule called **`"ProtectUrlUnmatched"`** which is `false` by default. Example :-
 
 ```json
 "UrlRateLimiting": {
@@ -38,7 +38,7 @@ In the `UrlRateLimiting` configuration in `appsettings.json` you also have an op
 ```
 
 If the `ProtectUrlUnmatched` is true for a rule then all the matched paths will count under one Limit. E.g.
-`get:/api/values/.*/Users/list` matches all the below calls and you will be able to call the API endpoint only 5 times in 5 minutes regardless of the caller.
+`get:/api/values/.*/Users/list` matches all the below calls and you will be able to call the API endpoint only 5 times in 5 minutes overall per Client / Ip / Url depending on the configuration section it is in.
 ```
 1. get:/api/values/microsoft/Users/list
 2. get:/api/values/google/Users/list
@@ -51,7 +51,7 @@ If the `ProtectUrlUnmatched` is true for a rule then all the matched paths will 
 ```
 
 If the `ProtectUrlUnmatched` is false then all the matched paths will count under their own separate limits. E.g.
-`get:/api/values/.*/Users/list` matches all the below API calls and each url path can be called 5 times in 5 minutes regardless of the caller.
+`get:/api/values/.*/Users/list` matches all the below API calls and each url path can be called 5 times in 5 minutes per Url Path per Client / Ip / Url depending on the configuration section it is in
 ```
 1. get:/api/values/microsoft/Users/list
 2. get:/api/values/microsoft/Users/list
