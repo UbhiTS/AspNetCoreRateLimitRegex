@@ -1,4 +1,4 @@
-AspNetCoreRateLimitRegex
+AspNetCoreRateLimitRegex <img src="https://poa5qzspd7.execute-api.us-east-1.amazonaws.com/live/hypercounterimage/45777c30009b4aa8878b0c58f58fcf61/counter.png" />
 ==============
 
 The original author of this project is Stefan Prodan (https://github.com/stefanprodan) at the project AspNetCoreRateLimit (https://github.com/stefanprodan/AspNetCoreRateLimit) and all the credit for the original code and concept goes to him.
